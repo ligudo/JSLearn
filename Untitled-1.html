@@ -18,15 +18,30 @@
                 document.getElementById("p2").style.display="none";
                 document.getElementById("img1").setAttribute("src","ONEDAY/自来也.jpg");
             }
+            function defineVariable(){
+                name = "ligudo";
+                console.log("name:", name);
+                var age;
+                console.log("typeof age:", typeof age == "undefined");
+                console.log("age == undefined:", age == undefined)
+                var gender = null;
+                console.log("typeof gender:", typeof gender);
+            }
         </script>
     </head>
+
     <body>
         <p id="p1" onclick='document.getElementById("p1").innerHTML = "hahaha"'>nice</p>
+
         <p id="p2" onclick="showDate()">点击查看当前日期</p>
+
         <button onclick="getGirl()">点我看美女</button> 
             <img id="img1" src="ONEDAY/大头贴.jpg" height="200" width="200"> 
         <button onclick="getBoy()">点我看靓仔</button>
+
         <p id="zilaiye">游龙当归海，海不迎我自来也。</p>
         <button onclick="zilaiye()">自来也豪杰物语</button>
+
+        <button onclick="defineVariable()">defineVariable</button>
     </body>
 </html>
