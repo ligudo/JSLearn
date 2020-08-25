@@ -2,10 +2,6 @@
 <html>
     <head>
         <script>
-            function showDate(){
-                var date = new Date();
-                document.getElementById("p2").innerHTML = date;
-            }
             function getGirl(){
                 document.getElementById("img1").setAttribute("src","ONEDAY/蝴蝶.png");
             }
@@ -15,33 +11,50 @@
             function zilaiye(){
                 document.getElementById("zilaiye").style.fontSize="25px";
                 document.getElementById("p1").style.display="none";
-                document.getElementById("p2").style.display="none";
                 document.getElementById("img1").setAttribute("src","ONEDAY/自来也.jpg");
             }
             function defineVariable(){
-                name = "ligudo";
+                let name = "ligudo";
                 console.log("name:", name);
+                
                 var age;
                 console.log("typeof age:", typeof age == "undefined");
                 console.log("age == undefined:", age == undefined)
+                
                 var gender = null;
                 console.log("typeof gender:", typeof gender);
+
+                var num = 1 + 1 + "ok";
+                console.log("num:",num) 
+                
+                var user = {
+                    name         : "故园风声",
+                    age          : 18,
+                    getNameAndAge:function(){
+                        return this.name + ":" + this.age;
+                    }
+                };
+                console.log("user:",user);
+                console.log(user.getNameAndAge());
+                console.log("user.name:",user.name);
+                console.log("user.getNameAndAge:",user.getNameAndAge);
+                console.log("user name length:",user.name.length);
+                console.log("100*10=","100"/10);
             }
+
         </script>
     </head>
 
     <body>
-        <p id="p1" onclick='document.getElementById("p1").innerHTML = "hahaha"'>nice</p>
-
-        <p id="p2" onclick="showDate()">点击查看当前日期</p>
+        <p id="p1" onclick="this.innerHTML=new Date()   ">点击查看当前日期</p>
 
         <button onclick="getGirl()">点我看美女</button> 
             <img id="img1" src="ONEDAY/大头贴.jpg" height="200" width="200"> 
         <button onclick="getBoy()">点我看靓仔</button>
 
         <p id="zilaiye">游龙当归海，海不迎我自来也。</p>
-        <button onclick="zilaiye()">自来也豪杰物语</button>
+        <button onclick="zilaiye()">自来也豪杰物语</button><br>
 
-        <button onclick="defineVariable()">defineVariable</button>
+        <button onclick="defineVariable()">数据类型测试</button><br>
     </body>
 </html>
